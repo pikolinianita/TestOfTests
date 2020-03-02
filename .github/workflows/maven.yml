@@ -17,8 +17,9 @@ jobs:
       run: mvn -B package --file pom.xml
     
     - name: Spotbugs report
-      run: mvn site
+      run: mvn site -s $GITHUB_WORKSPACE/settings.xml
       continue-on-error: true 
+     
     
     - name: Publish to GitHub Packages Apache Maven
       run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
