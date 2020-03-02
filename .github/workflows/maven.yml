@@ -21,7 +21,9 @@ jobs:
       continue-on-error: true 
       
     - name: Sonar Report
-      run: mvn verify sonar:sonar 
+      run: mvn verify sonar:sonar
+      env:
+        GITHUB_TOKEN: ${{ github.token }} 
       
     - name: upload report
       uses: actions/upload-artifact@v1
