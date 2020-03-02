@@ -20,6 +20,11 @@ jobs:
       run: mvn site -s $GITHUB_WORKSPACE/settings.xml
       continue-on-error: true 
       
+    - name: Coveralls
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+      
     - name: upload report
       uses: actions/upload-artifact@v1
       with:
