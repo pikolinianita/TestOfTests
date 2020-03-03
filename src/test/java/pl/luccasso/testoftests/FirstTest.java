@@ -22,7 +22,7 @@ public class FirstTest {
     @Test
     public void testSomeMethod() {
         var x = new First();
-        x;
+       
     }
     
     @ParameterizedTest
